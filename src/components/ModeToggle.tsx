@@ -15,7 +15,7 @@ export default function ModeToggle() {
   return (
     <Button variant="outline" size="icon" onClick={toggleTheme}>
       {resolvedTheme === "dark" ? (
-        <SunIcon className="h-[1.2rem] w-[1.2rem]" />
+        <SunIcon className="h-[1.2rem] w-[1.2rem] lucide" />
       ) : (
         <MoonIcon className="h-[1.2rem] w-[1.2rem]" />
       )}

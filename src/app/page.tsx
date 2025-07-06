@@ -7,7 +7,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import { Button } from "@/components/ui/button";
-import ModeToggle from "@/components/ModeToggle";
+
 export default function Home() {
   return (
     <div className="m-4">
@@ -22,8 +22,8 @@ export default function Home() {
             <SignedIn>
               <UserButton />
             </SignedIn>
-<ModeToggle/>
-            <Button variant={'secondary'}>Click me</Button>
+
+            {/* <Button variant={'secondary'}>Click me</Button> */}
     </div>
   );
 }
