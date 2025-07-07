@@ -6,6 +6,7 @@ import {
 } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/ThemeProvider"
 import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -42,7 +43,9 @@ export default function RootLayout({
                 {/* container to put content on center */}
                 <div className="max-w-7xl mx-auto px-4">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                    <div className="hidden lg:block lg:col-span-3">sidebar</div>
+                    <div className="hidden lg:block lg:col-span-3">
+                      <Sidebar/>
+                    </div>
                   <div className="lg:col-span-9"> {children} </div>
                   </div>
                 </div>
