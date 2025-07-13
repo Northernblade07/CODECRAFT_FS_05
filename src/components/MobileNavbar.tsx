@@ -66,7 +66,7 @@ function MobileNavbar() {
               }`}
             >
               <UserIcon className="w-4 h-4" />
-              <span className="hidden lg:inline">Profile</span>
+              Profile
             </Link>
                 <SignOutButton>
                   <Button variant="ghost" className="flex items-center gap-3 justify-start w-full">
