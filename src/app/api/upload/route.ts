@@ -15,11 +15,13 @@ function bufferToStream(buffer: Buffer): Readable {
   return readable;
 }
 
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<Response> {
   const data = await req.formData();
   const file = data.get("file") as File;
 
-  if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 });
+  if (!file) {
+    return NextResponse.json({ error: "No file provided" }, { status: 400 });
+  }
 
   const arrayBuffer = await file.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
@@ -29,9 +31,13 @@ export async function POST(req: Request) {
       { folder: "next-posts" },
       (error, result) => {
         if (error || !result) {
-          reject(NextResponse.json({ error: "Cloudinary Upload Failed" }, { status: 500 }));
+          reject(
+            NextResponse.json({ error: "Cloudinary Upload Failed" }, { status: 500 })
+          );
         } else {
-          resolve(NextResponse.json({ success: true, url: result.secure_url }));
+          resolve(
+            NextResponse.json({ success: true, url: result.secure_url })
+          );
         }
       }
     );
@@ -39,3 +45,4 @@ export async function POST(req: Request) {
     bufferToStream(buffer).pipe(uploadStream);
   });
 }
+
