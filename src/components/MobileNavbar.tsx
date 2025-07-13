@@ -60,7 +60,7 @@ function MobileNavbar() {
                     Notifications
                   </Link>
                 </Button>
-                <Button>
+                <Button variant="ghost" className="flex items-center gap-3 justify-start" asChild>
                  <Link
               href={`/profile/${
                 user?.username ?? user?.emailAddresses[0].emailAddress.split("@")[0]
