@@ -8,6 +8,10 @@ import { ThemeProvider } from "@/components/ThemeProvider"
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import {Toaster} from 'react-hot-toast'
+// import "@uploadthing/react/styles.css";
+
+// ...
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
