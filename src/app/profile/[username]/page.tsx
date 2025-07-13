@@ -22,7 +22,7 @@ export default async function Page({
   const username = (await params).username
   console.log(username)
   const user = await getProfileByUsername(username);
-    if(!user) notFound();
+    if(!user)notFound();
     const [posts , likedPosts, isCurrentUserFollowing] = await Promise.all([getUserPosts(user.id),
         getUserLikedPosts(user.id),
         isFollowing(user.id)
